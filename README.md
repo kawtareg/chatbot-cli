@@ -41,7 +41,7 @@ Chatbot conversationnel en CLI qui joue le rôle d'un chef cuisinier français �
 
 ### Prérequis
 
-- Mac avec [Homebrew](https://brew.sh)
+- Mac avec [Homebrew](https://brew.sh) ou équivalent
 - Python 3.12+
 
 ### 1. Clone le projet
@@ -141,7 +141,6 @@ ollama pull gemma
 
 ## Prochaines étapes
 
-- [ ] Ajouter une interface web avec Gradio
 - [ ] Implémenter un système RAG pour donner accès à des recettes externes
 - [ ] Passer à un agent capable de rechercher des recettes en ligne
 
@@ -149,4 +148,4 @@ ollama pull gemma
 
 ## Auteur
 
-**Kawtar El Gueddari** — [GitHub](https://github.com/TON_PSEUDO) · INSA Rouen Normandie
+**Kawtar El Gueddari** — [GitHub](https://github.com/kawtareg) · INSA Rouen Normandie
