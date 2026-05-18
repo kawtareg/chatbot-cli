@@ -1,6 +1,4 @@
-# MyFirstChatbot
-
-# Chatbot Chef Cuisinier
+# MyFirstChatbot: Chef Cuisinier
 
 Chatbot conversationnel en CLI qui joue le rôle d'un chef cuisinier français étoilé. Tourne entièrement en local grâce à [Ollama](https://ollama.com) — aucune clé API, aucun coût.
 
