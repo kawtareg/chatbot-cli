@@ -1,149 +1,146 @@
-# MyFirstChatbot: Chef Cuisinier
-
-Chatbot conversationnel en CLI qui joue le rôle d'un chef cuisinier français étoilé. Tourne entièrement en local grâce à [Ollama](https://ollama.com) — aucune clé API, aucun coût.
-
-> Projet réalisé dans le cadre d'un apprentissage de l'agentique et des LLMs — 4ème année ingénierie informatique, INSA Rouen.
-
+# local-chatbot: French Chef Chatbot
+ 
+A CLI conversational chatbot playing the role of a Michelin-starred French chef. Runs entirely locally via [Ollama](https://ollama.com).
+ 
+> Built as part of an LLM & agentic AI learning journey - 4th year Computer Science Engineering, INSA Rouen.
+ 
 ---
-## Démo
-
-![Démo du chatbot](assets/demo_chatbot.gif)
-
+ 
+## Demo
+ 
+![Chatbot demo](assets/demo_chatbot.gif)
+ 
 ---
-
-## Fonctionnalités
-
-- Conversation multi-tour avec mémoire de l'historique
-- Streaming de la réponse mot par mot
-- Commande `reset` pour réinitialiser la mémoire
-- Commande `save` pour sauvegarder la conversation en JSON
-- Commande `quit` pour quitter
-- Personnalité configurable via `config.py`
-- Gestion des erreurs API
-
+ 
+## Features
+ 
+- Multi-turn conversation with full history memory
+- Token-by-token streaming responses
+- `reset` command to clear conversation memory
+- `save` command to export conversation history as JSON
+- `quit` command to exit
+- Configurable personality via `config.py`
+- Robust API error handling
 ---
-
-## Stack technique
-
-| Outil | Rôle |
+ 
+## Stack
+ 
+| Tool | Role |
 |---|---|
-| Python 3.12 | Langage |
-| [Ollama](https://ollama.com) | Inférence locale |
-| Mistral 7B | Modèle de langage |
-| openai SDK | Client API (compatible Ollama) |
-| python-dotenv | Gestion des variables d'environnement |
-
+| Python 3.12 | Language |
+| [Ollama](https://ollama.com) | Local LLM inference |
+| Mistral 7B | Language model |
+| openai SDK | API client (Ollama-compatible) |
+| python-dotenv | Environment variable management |
+ 
 ---
-
+ 
 ## Installation
-
-### Prérequis
-
-- Mac avec [Homebrew](https://brew.sh) ou équivalent
+ 
+### Prerequisites
+ 
+- Mac with [Homebrew](https://brew.sh) or equivalent
 - Python 3.12+
-
-### 1. Clone le projet
-
+### 1. Clone the project
+ 
 ```bash
-git clone https://github.com/TON_PSEUDO/chatbot-llm
-cd chatbot-llm
+git clone https://github.com/kawtareg/local-chatbot
+cd local-chatbot
 ```
-
-### 2. Installe Ollama et le modèle
-
+ 
+### 2. Install Ollama and the model
+ 
 ```bash
 brew install ollama
 brew services start ollama
 ollama pull mistral
 ```
-
-### 3. Crée l'environnement Python
-
+ 
+### 3. Set up Python environment
+ 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
-
-### 4. Lance le chatbot
-
+ 
+### 4. Run the chatbot
+ 
 ```bash
 python3 main.py
 ```
-
+ 
 ---
-
-## Utilisation
-
+ 
+## Usage
+ 
 ```
-Entrez une requête après >>>, quit pour quitter,
-reset pour remettre à 0 la mémoire, save pour enregistrer.
-
+Enter a query after >>>, quit to exit,
+reset to clear memory, save to export the conversation.
+ 
 >>> Bonjour, qui es-tu ?
->>> Donne moi une recette de blanquette de veau
+>>> Give me a blanquette de veau recipe
 >>> save
 >>> reset
 >>> quit
 ```
-
-Les conversations sauvegardées sont stockées dans `history/` au format JSON.
-
+ 
+Saved conversations are stored in `history/` as JSON files.
+ 
 ---
-
-## Structure du projet
-
+ 
+## Project structure
+ 
 ```
-chatbot-llm/
-├── main.py          # point d'entrée
-├── chatbot.py       # logique du chatbot (streaming, historique, commandes)
-├── config.py        # system prompt et paramètres du modèle
+local-chatbot/
+├── main.py          # entry point
+├── chatbot.py       # chatbot logic (streaming, history, commands)
+├── config.py        # system prompt and model parameters
 ├── requirements.txt
-├── history/         # conversations sauvegardées (ignoré par git)
+├── history/         # saved conversations (git-ignored)
 │   └── .gitkeep
 └── .gitignore
 ```
-
+ 
 ---
-
-## Personnalisation
-
-Modifie `config.py` pour changer la personnalité du chatbot :
-
+ 
+## Customization
+ 
+Edit `config.py` to change the chatbot personality:
+ 
 ```python
-MODEL = "mistral"       # ou llama3, phi3, gemma...
-TEMPERATURE = 0.3       # 0 = réponses stables, 1 = créatif
-
-SYSTEM_PROMPT = """Tu es un chef cuisinier français étoilé...."""
+MODEL = "mistral"       # or llama3, phi3, gemma...
+TEMPERATURE = 0.3       # 0 = deterministic, 1 = creative
+ 
+SYSTEM_PROMPT = """You are a Michelin-starred French chef..."""
 ```
-
-Tu peux aussi remplacer `mistral` par n'importe quel modèle disponible sur Ollama :
-
+ 
+You can also swap `mistral` for any model available on Ollama:
+ 
 ```bash
 ollama pull llama3
 ollama pull phi3
 ollama pull gemma
 ```
-
+ 
 ---
-
-## Ce que j'ai appris
-
-- Appels API LLM avec le SDK openai
-- Gestion de l'historique de conversation (format `messages`)
-- Streaming token par token
-- Séparation de la logique en modules Python
-- Persistance de données en JSON
-- Gestion d'erreurs robuste avec `try/except`
-
+ 
+## What I learned
+ 
+- LLM API calls with the openai SDK
+- Conversation history management (`messages` format)
+- Token-by-token streaming
+- Modular Python project structure
+- JSON data persistence
+- Robust error handling with `try/except`
 ---
-
-## Prochaines étapes
-
-- [ ] Implémenter un système RAG pour donner accès à des recettes externes
-- [ ] Passer à un agent capable de rechercher des recettes en ligne
-
+ 
+## Roadmap
+ 
+- [ ] RAG system to give the chef access to external recipes
+- [ ] Agentic version capable of searching recipes online
 ---
-
-## Auteur
-
+ 
+## Author
+ 
 **Kawtar El Gueddari** — [GitHub](https://github.com/kawtareg) · INSA Rouen Normandie
