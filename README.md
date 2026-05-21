@@ -79,7 +79,7 @@ Enter a query after >>>, quit to exit,
 reset to clear memory, save to export the conversation.
  
 >>> Bonjour, qui es-tu ?
->>> Give me a blanquette de veau recipe
+>>> Donnes moi la recette de la blanquette de veau
 >>> save
 >>> reset
 >>> quit
