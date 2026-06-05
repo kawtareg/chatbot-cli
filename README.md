@@ -4,7 +4,6 @@ A CLI conversational chatbot playing the role of a Michelin-starred French chef.
  
 > Built as part of an LLM & agentic AI learning journey - 4th year Computer Science Engineering, INSA Rouen.
 
----
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Ollama](https://img.shields.io/badge/Ollama-local-black)
 ![Mistral](https://img.shields.io/badge/Model-Mistral_7B-purple)
@@ -52,7 +51,7 @@ A CLI conversational chatbot playing the role of a Michelin-starred French chef.
  
 ```bash
 git clone https://github.com/kawtareg/chatbot-cli
-cd local-chatbot
+cd chatbot-cli
 ```
  
 ### 2. Install Ollama and the model
