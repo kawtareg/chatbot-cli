@@ -51,7 +51,7 @@ A CLI conversational chatbot playing the role of a Michelin-starred French chef.
 ### 1. Clone the project
  
 ```bash
-git clone https://github.com/kawtareg/local-chatbot
+git clone https://github.com/kawtareg/chatbot-cli
 cd local-chatbot
 ```
  
