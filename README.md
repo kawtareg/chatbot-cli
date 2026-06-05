@@ -3,6 +3,13 @@
 A CLI conversational chatbot playing the role of a Michelin-starred French chef. Runs entirely locally via [Ollama](https://ollama.com).
  
 > Built as part of an LLM & agentic AI learning journey - 4th year Computer Science Engineering, INSA Rouen.
+
+---
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![Ollama](https://img.shields.io/badge/Ollama-local-black)
+![Mistral](https://img.shields.io/badge/Model-Mistral_7B-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Local](https://img.shields.io/badge/Runs-100%25_locally-orange)
  
 ---
  
